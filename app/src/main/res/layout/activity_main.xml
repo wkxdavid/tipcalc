@@ -6,13 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <EditText
+            android:id="@+id/input_price"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_margin="48dp"
+            android:hint="@string/amount"
+            android:inputType="numberDecimal"
+            android:textColor="#444444"
+            android:importantForAutofill="no" />
+
+        <Button
+            android:id="@+id/submit_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/input_price"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:enabled="false"
+            android:text="@string/calculate_tip" />
+
+        <Spinner
+            android:id="@+id/tip_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@id/submit_tip"
+            android:layout_marginTop="48dp"
+            android:entries="@array/percentages"
+            android:visibility="visible" />
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
